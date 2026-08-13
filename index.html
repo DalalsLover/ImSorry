@@ -105,10 +105,7 @@ body{
   font-size:clamp(28px,6vw,40px);color:var(--deep-rose);margin-bottom:10px;
 }
 .bouquet-sub{font-size:17px;color:var(--warm);font-style:italic;margin-bottom:36px}
-.bouquet-wrap{
-  max-width:420px;margin:0 auto;position:relative;
-  cursor:pointer;
-}
+.bouquet-wrap{max-width:420px;margin:0 auto;position:relative;cursor:pointer}
 .bouquet-wrap svg{width:100%;height:auto;filter:drop-shadow(0 20px 40px rgba(150,80,90,.25))}
 .flower-word{
   position:absolute;
@@ -153,10 +150,7 @@ body{
   right:12%;top:44%;z-index:4;
   transition:left .18s ease, top .18s ease;
 }
-.forgive-hint{
-  font-style:italic;color:var(--warm);font-size:15px;
-  margin-top:20px;min-height:24px;
-}
+.forgive-hint{font-style:italic;color:var(--warm);font-size:15px;margin-top:20px;min-height:24px}
 
 #thanks-screen{text-align:center;padding:60px 24px}
 #thanks-screen h1{
@@ -166,10 +160,7 @@ body{
 #thanks-screen p{font-size:clamp(19px,3vw,23px);max-width:560px;line-height:2;margin:0 auto 18px}
 .thanks-sig{font-family:'Caveat',cursive;font-size:30px;color:var(--deep-rose);margin-top:34px}
 
-.burst-flower{
-  position:fixed;pointer-events:none;z-index:50;
-  animation:burstFall linear forwards;
-}
+.burst-flower{position:fixed;pointer-events:none;z-index:50;animation:burstFall linear forwards}
 @keyframes burstFall{
   0%{transform:translateY(-40px) rotate(0);opacity:1}
   100%{transform:translateY(105vh) rotate(380deg);opacity:.5}
@@ -178,8 +169,7 @@ body{
 .date-stamp{
   position:fixed;bottom:20px;right:20px;
   font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:14px;color:rgba(139,111,106,.5);
-  z-index:2;
+  font-size:14px;color:rgba(139,111,106,.5);z-index:2;
 }
 
 @media(max-width:520px){
@@ -264,7 +254,6 @@ body{
 <div class="screen" id="bouquet-screen">
   <h2 class="bouquet-title">A bouquet, for you.</h2>
   <p class="bouquet-sub">tap the flowers — each one has something to say</p>
-  
   <div class="bouquet-wrap" id="bouquetWrap">
     <svg viewBox="0 0 400 420" id="bouquetSvg">
       <path d="M200 400 Q195 340 190 280 Q185 240 180 200" stroke="#4a6a3a" stroke-width="4" fill="none"/>
@@ -273,22 +262,15 @@ body{
       <path d="M200 400 Q210 330 225 265 Q232 228 240 192" stroke="#5a7a4a" stroke-width="3.5" fill="none"/>
       <path d="M200 400 Q195 325 185 255 Q180 220 172 185" stroke="#4a6a3a" stroke-width="3" fill="none"/>
       <path d="M200 400 Q208 328 218 258 Q222 222 228 188" stroke="#4a6a3a" stroke-width="3" fill="none"/>
-      
       <ellipse cx="175" cy="320" rx="22" ry="9" fill="#5a7a4a" transform="rotate(-35 175 320)"/>
       <ellipse cx="228" cy="315" rx="22" ry="9" fill="#5a7a4a" transform="rotate(30 228 315)"/>
       <ellipse cx="165" cy="280" rx="18" ry="7" fill="#6a8a5a" transform="rotate(-40 165 280)"/>
       <ellipse cx="238" cy="275" rx="18" ry="7" fill="#6a8a5a" transform="rotate(35 238 275)"/>
       <ellipse cx="180" cy="245" rx="15" ry="6" fill="#7a9a6a" transform="rotate(-30 180 245)"/>
       <ellipse cx="222" cy="240" rx="15" ry="6" fill="#7a9a6a" transform="rotate(28 222 240)"/>
-      
       <g class="flower-click" data-word="0" transform="translate(200,170)">
-        <circle r="38" fill="#e8a5a0"/>
-        <circle r="32" fill="#eeb0ab"/>
-        <circle r="26" fill="#f2b8b3"/>
-        <circle r="20" fill="#f5c2bd"/>
-        <circle r="14" fill="#f8ccc7"/>
-        <circle r="8" fill="#fad6d1"/>
-        <circle r="4" fill="#fce0db"/>
+        <circle r="38" fill="#e8a5a0"/><circle r="32" fill="#eeb0ab"/><circle r="26" fill="#f2b8b3"/>
+        <circle r="20" fill="#f5c2bd"/><circle r="14" fill="#f8ccc7"/><circle r="8" fill="#fad6d1"/><circle r="4" fill="#fce0db"/>
         <path d="M-30,-14 Q-18,-32 0,-28 Q18,-32 30,-14" fill="none" stroke="#d08a84" stroke-width="1.5" opacity=".5"/>
         <path d="M-24,8 Q-10,-12 0,-8 Q10,-12 24,8" fill="none" stroke="#d08a84" stroke-width="1.2" opacity=".4"/>
         <path d="M-18,18 Q-8,2 0,5 Q8,2 18,18" fill="none" stroke="#d08a84" stroke-width="1" opacity=".35"/>
@@ -298,55 +280,36 @@ body{
         <ellipse cx="-18" cy="-22" rx="12" ry="16" fill="#e5a09a" opacity=".5" transform="rotate(-30 -18 -22)"/>
         <ellipse cx="18" cy="-22" rx="12" ry="16" fill="#e5a09a" opacity=".5" transform="rotate(30 18 -22)"/>
       </g>
-      
       <g class="flower-click" data-word="1" transform="translate(155,165) scale(.82)">
-        <circle r="34" fill="#f2cdc9"/>
-        <circle r="28" fill="#f5d5d1"/>
-        <circle r="22" fill="#f8ddd9"/>
-        <circle r="16" fill="#fae5e1"/>
-        <circle r="10" fill="#fcede9"/>
-        <circle r="5" fill="#fef4f1"/>
+        <circle r="34" fill="#f2cdc9"/><circle r="28" fill="#f5d5d1"/><circle r="22" fill="#f8ddd9"/>
+        <circle r="16" fill="#fae5e1"/><circle r="10" fill="#fcede9"/><circle r="5" fill="#fef4f1"/>
         <path d="M-26,-12 Q-15,-28 0,-24 Q15,-28 26,-12" fill="none" stroke="#dab0ab" stroke-width="1.2" opacity=".5"/>
         <path d="M-20,6 Q-8,-10 0,-6 Q8,-10 20,6" fill="none" stroke="#dab0ab" stroke-width="1" opacity=".4"/>
         <ellipse cx="-24" cy="10" rx="12" ry="17" fill="#eebfb9" opacity=".6" transform="rotate(-22 -24 10)"/>
         <ellipse cx="24" cy="10" rx="12" ry="17" fill="#eebfb9" opacity=".6" transform="rotate(22 24 10)"/>
         <ellipse cx="0" cy="-24" rx="14" ry="12" fill="#f0c5c0" opacity=".5"/>
       </g>
-      
       <g class="flower-click" data-word="2" transform="translate(245,168) scale(.85)">
-        <circle r="34" fill="#e5a5a0"/>
-        <circle r="28" fill="#eab0ab"/>
-        <circle r="22" fill="#eeb8b3"/>
-        <circle r="16" fill="#f2c2bd"/>
-        <circle r="10" fill="#f5ccc7"/>
-        <circle r="5" fill="#f8d6d1"/>
+        <circle r="34" fill="#e5a5a0"/><circle r="28" fill="#eab0ab"/><circle r="22" fill="#eeb8b3"/>
+        <circle r="16" fill="#f2c2bd"/><circle r="10" fill="#f5ccc7"/><circle r="5" fill="#f8d6d1"/>
         <path d="M-26,-12 Q-15,-28 0,-24 Q15,-28 26,-12" fill="none" stroke="#d0908a" stroke-width="1.2" opacity=".5"/>
         <path d="M-20,6 Q-8,-10 0,-6 Q8,-10 20,6" fill="none" stroke="#d0908a" stroke-width="1" opacity=".4"/>
         <ellipse cx="-24" cy="10" rx="12" ry="17" fill="#e09a94" opacity=".6" transform="rotate(-22 -24 10)"/>
         <ellipse cx="24" cy="10" rx="12" ry="17" fill="#e09a94" opacity=".6" transform="rotate(22 24 10)"/>
         <ellipse cx="0" cy="-24" rx="14" ry="12" fill="#e5a5a0" opacity=".5"/>
       </g>
-      
       <g class="flower-click" data-word="3" transform="translate(130,195) scale(.6)">
-        <circle r="30" fill="#f5d5d0"/>
-        <circle r="24" fill="#f8ddd8"/>
-        <circle r="18" fill="#fae5e0"/>
-        <circle r="12" fill="#fceae6"/>
-        <circle r="6" fill="#fef2ef"/>
+        <circle r="30" fill="#f5d5d0"/><circle r="24" fill="#f8ddd8"/><circle r="18" fill="#fae5e0"/>
+        <circle r="12" fill="#fceae6"/><circle r="6" fill="#fef2ef"/>
         <ellipse cx="-20" cy="8" rx="10" ry="14" fill="#f0c5c0" opacity=".6" transform="rotate(-25 -20 8)"/>
         <ellipse cx="20" cy="8" rx="10" ry="14" fill="#f0c5c0" opacity=".6" transform="rotate(25 20 8)"/>
       </g>
-      
       <g class="flower-click" data-word="4" transform="translate(270,198) scale(.62)">
-        <circle r="30" fill="#eeb0ab"/>
-        <circle r="24" fill="#f2b8b3"/>
-        <circle r="18" fill="#f5c2bd"/>
-        <circle r="12" fill="#f8ccc7"/>
-        <circle r="6" fill="#fad6d1"/>
+        <circle r="30" fill="#eeb0ab"/><circle r="24" fill="#f2b8b3"/><circle r="18" fill="#f5c2bd"/>
+        <circle r="12" fill="#f8ccc7"/><circle r="6" fill="#fad6d1"/>
         <ellipse cx="-20" cy="8" rx="10" ry="14" fill="#e8a5a0" opacity=".6" transform="rotate(-25 -20 8)"/>
         <ellipse cx="20" cy="8" rx="10" ry="14" fill="#e8a5a0" opacity=".6" transform="rotate(25 20 8)"/>
       </g>
-      
       <circle cx="140" cy="150" r="4" fill="#fff" opacity=".85"/>
       <circle cx="260" cy="155" r="4" fill="#fff" opacity=".85"/>
       <circle cx="175" cy="135" r="3" fill="#fff" opacity=".7"/>
@@ -356,23 +319,19 @@ body{
       <circle cx="200" cy="130" r="3.5" fill="#fff" opacity=".75"/>
       <circle cx="120" cy="175" r="2.5" fill="#fff" opacity=".6"/>
       <circle cx="280" cy="178" r="2.5" fill="#fff" opacity=".6"/>
-      
       <ellipse cx="145" cy="145" rx="6" ry="3" fill="#8aaa7a" opacity=".7" transform="rotate(-20 145 145)"/>
       <ellipse cx="255" cy="148" rx="6" ry="3" fill="#8aaa7a" opacity=".7" transform="rotate(15 255 148)"/>
-      
       <path d="M150 360 L200 410 L250 360" fill="rgba(245,235,225,.5)" stroke="#c9b8a5" stroke-width="2"/>
       <path d="M155 365 L200 405 L245 365" fill="none" stroke="#c9b8a5" stroke-width="1" opacity=".5"/>
       <path d="M185 370 Q200 380 215 370" fill="none" stroke="#c77d78" stroke-width="3"/>
       <circle cx="200" cy="375" r="5" fill="#c77d78"/>
     </svg>
-    
     <div class="flower-word" id="fw0" style="top:35%;left:50%;transform:translateX(-50%)">I'm sorry</div>
     <div class="flower-word" id="fw1" style="top:33%;left:28%">I didn't mean it</div>
     <div class="flower-word" id="fw2" style="top:34%;left:72%">I'll be softer</div>
     <div class="flower-word" id="fw3" style="top:43%;left:22%">you matter to me</div>
     <div class="flower-word" id="fw4" style="top:44%;left:78%">always 🌸</div>
   </div>
-  
   <div class="bouquet-count" id="bouquetCount"></div>
   <div class="bouquet-continue" id="bouquetContinue">
     <button class="continue-btn" onclick="showScreen('forgive-screen')">one last thing 🌸</button>
@@ -426,7 +385,7 @@ function showScreen(id){
   if(id==='bouquet-screen') initBouquet();
 }
 
-/* ═══ Typewriter (word by word) — MEDIUM SPEED ═══ */
+/* ═══ Typewriter (حرف حرف - طبيعي) ═══ */
 const letterText = [
   {text:"Not the kind of sorry where I make excuses.", em:false},
   {text:"Not the kind where I say", em:false},
@@ -471,10 +430,11 @@ function startTypewriter(){
   body.appendChild(cursor);
   
   let lineIdx = 0;
-  let wordIdx = 0;
+  let charIdx = 0;
   let currentP = null;
+  let currentSpan = null;
   
-  function nextWord(){
+  function typeNextChar(){
     if(lineIdx >= letterText.length){
       setTimeout(()=>{
         cursor.remove();
@@ -490,38 +450,42 @@ function startTypewriter(){
     
     if(line.text === ""){
       currentP = null;
+      currentSpan = null;
       lineIdx++;
-      wordIdx = 0;
-      setTimeout(nextWord, 500); // ⬅️ بين الفقرات
+      charIdx = 0;
+      setTimeout(typeNextChar, 500);
       return;
     }
     
-    const words = line.text.split(' ');
-    
-    if(wordIdx === 0){
+    if(charIdx === 0){
       currentP = document.createElement('p');
       currentP.style.marginBottom = '18px';
       body.insertBefore(currentP, cursor);
+      
+      currentSpan = document.createElement('span');
+      if(line.em) currentSpan.style.color = 'var(--deep-rose)';
+      currentP.appendChild(currentSpan);
     }
     
-    if(wordIdx < words.length){
-      const span = document.createElement('span');
-      if(line.em) span.style.color = 'var(--deep-rose)';
-      span.textContent = words[wordIdx] + ' ';
-      span.style.opacity = '0';
-      span.style.transition = 'opacity .3s ease';
-      currentP.insertBefore(span, null);
-      requestAnimationFrame(()=>{ span.style.opacity = '1'; });
-      wordIdx++;
-      setTimeout(nextWord, 280); // ⬅️ بين كل كلمة (وسط)
+    if(charIdx < line.text.length){
+      const char = line.text[charIdx];
+      currentSpan.textContent += char;
+      charIdx++;
+      
+      let delay = 45;
+      if(char === '.') delay = 350;
+      else if(char === ',') delay = 200;
+      else if(char === '"' || char === '"') delay = 150;
+      
+      setTimeout(typeNextChar, delay);
     } else {
       lineIdx++;
-      wordIdx = 0;
-      setTimeout(nextWord, 350); // ⬅️ نهاية السطر
+      charIdx = 0;
+      setTimeout(typeNextChar, 120);
     }
   }
   
-  setTimeout(nextWord, 800); // ⬅️ بداية الكتابة
+  setTimeout(typeNextChar, 800);
 }
 
 /* ═══ Bouquet interaction ═══ */

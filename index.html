@@ -9,172 +9,68 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --blush:#f5d5d0;
-  --rose:#e8a5a0;
-  --deep-rose:#c77d78;
-  --cream:#fdf8f0;
-  --warm:#8b6f6a;
-  --gold:#c9a96e;
-  --text:#4a3832;
+  --blush:#f5d5d0;--rose:#e8a5a0;--deep-rose:#c77d78;
+  --cream:#fdf8f0;--warm:#8b6f6a;--gold:#c9a96e;--text:#4a3832;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
-body{
-  font-family:'Cormorant Garamond',serif;
-  background:var(--cream);
-  color:var(--text);
-  min-height:100vh;overflow-x:hidden;line-height:1.7;
-}
-
+body{font-family:'Cormorant Garamond',serif;background:var(--cream);color:var(--text);min-height:100vh;overflow-x:hidden;line-height:1.7}
 #petals-bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.petal{
-  position:absolute;top:-60px;
-  border-radius:60% 40% 55% 45% / 50% 60% 40% 50%;
-  background:radial-gradient(ellipse at 30% 25%,#fff 0%,#f8dcd8 45%,#e8a5a0 100%);
-  opacity:.6;
-  animation:fall linear infinite;
-  filter:drop-shadow(0 2px 3px rgba(200,150,150,.2));
-}
-@keyframes fall{
-  0%{transform:translateY(-60px) translateX(0) rotate(0deg)}
-  100%{transform:translateY(110vh) translateX(80px) rotate(540deg)}
-}
-
+.petal{position:absolute;top:-60px;border-radius:60% 40% 55% 45%/50% 60% 40% 50%;background:radial-gradient(ellipse at 30% 25%,#fff 0%,#f8dcd8 45%,#e8a5a0 100%);opacity:.6;animation:fall linear infinite;filter:drop-shadow(0 2px 3px rgba(200,150,150,.2))}
+@keyframes fall{0%{transform:translateY(-60px) translateX(0) rotate(0deg)}100%{transform:translateY(110vh) translateX(80px) rotate(540deg)}}
 .screen{display:none;min-height:100vh;position:relative;z-index:1}
 .screen.active{display:flex;flex-direction:column;justify-content:center;align-items:center;animation:fadeIn 1.2s ease}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-
 #opening{text-align:center;padding:40px 20px}
 .opening-bouquet{width:220px;height:220px;margin:0 auto 30px;animation:bFloat 5s ease-in-out infinite}
 @keyframes bFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-#opening h1{
-  font-family:'Playfair Display',serif;font-style:italic;
-  font-size:clamp(48px,9vw,78px);color:var(--deep-rose);
-  opacity:0;animation:rise 1.6s ease forwards .4s;
-}
-#opening p{
-  font-size:clamp(18px,3vw,22px);color:var(--warm);font-style:italic;
-  margin:14px 0 44px;opacity:0;animation:rise 1.6s ease forwards 1s;
-}
-.open-btn{
-  padding:16px 48px;background:transparent;border:1px solid var(--deep-rose);
-  color:var(--deep-rose);font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:19px;border-radius:50px;cursor:pointer;transition:all .4s;
-  opacity:0;animation:rise 1.6s ease forwards 1.6s;
-}
+#opening h1{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(48px,9vw,78px);color:var(--deep-rose);opacity:0;animation:rise 1.6s ease forwards .4s}
+#opening p{font-size:clamp(18px,3vw,22px);color:var(--warm);font-style:italic;margin:14px 0 44px;opacity:0;animation:rise 1.6s ease forwards 1s}
+.open-btn{padding:16px 48px;background:transparent;border:1px solid var(--deep-rose);color:var(--deep-rose);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;border-radius:50px;cursor:pointer;transition:all .4s;opacity:0;animation:rise 1.6s ease forwards 1.6s}
 .open-btn:hover{background:var(--deep-rose);color:var(--cream);letter-spacing:1px}
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-
 #letter-screen{padding:60px 24px;justify-content:flex-start;overflow-y:auto}
 .letter-wrap{max-width:680px;width:100%;margin:0 auto;padding:40px 0}
 .letter-label{font-family:'Caveat',cursive;font-size:22px;color:var(--gold);text-align:center;margin-bottom:8px}
-.letter-title{
-  font-family:'Playfair Display',serif;font-style:italic;
-  font-size:clamp(30px,6vw,44px);color:var(--deep-rose);
-  text-align:center;margin-bottom:34px;
-}
-.letter-body{
-  font-size:clamp(18px,2.6vw,21px);line-height:2;color:var(--text);
-  min-height:300px;
-}
+.letter-title{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(30px,6vw,44px);color:var(--deep-rose);text-align:center;margin-bottom:34px}
+.letter-body{font-size:clamp(18px,2.6vw,21px);line-height:2;color:var(--text);min-height:300px}
 .letter-body em{color:var(--deep-rose)}
-.letter-cursor{
-  display:inline-block;width:2px;height:1.1em;background:var(--deep-rose);
-  margin-left:2px;vertical-align:text-bottom;
-  animation:blink .7s step-end infinite;
-}
+.letter-cursor{display:inline-block;width:2px;height:1.1em;background:var(--deep-rose);margin-left:2px;vertical-align:text-bottom;animation:blink .7s step-end infinite}
 @keyframes blink{from,to{opacity:0}50%{opacity:1}}
-.letter-sig{
-  text-align:right;font-family:'Caveat',cursive;font-size:28px;
-  color:var(--deep-rose);margin-top:36px;opacity:0;transition:opacity 1.2s ease;
-}
+.letter-sig{text-align:right;font-family:'Caveat',cursive;font-size:28px;color:var(--deep-rose);margin-top:36px;opacity:0;transition:opacity 1.2s ease}
 .letter-sig.show{opacity:1}
 .continue-wrap{text-align:center;margin-top:50px;opacity:0;transition:opacity 1s ease}
 .continue-wrap.show{opacity:1}
-.continue-btn{
-  padding:14px 40px;background:var(--deep-rose);color:var(--cream);
-  border:none;border-radius:50px;font-family:'Cormorant Garamond',serif;
-  font-style:italic;font-size:18px;cursor:pointer;transition:all .3s;
-  box-shadow:0 8px 24px rgba(199,125,120,.3);
-}
+.continue-btn{padding:14px 40px;background:var(--deep-rose);color:var(--cream);border:none;border-radius:50px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;cursor:pointer;transition:all .3s;box-shadow:0 8px 24px rgba(199,125,120,.3)}
 .continue-btn:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(199,125,120,.4)}
-
 #bouquet-screen{text-align:center;padding:60px 20px}
-.bouquet-title{
-  font-family:'Playfair Display',serif;font-style:italic;
-  font-size:clamp(28px,6vw,40px);color:var(--deep-rose);margin-bottom:10px;
-}
+.bouquet-title{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(28px,6vw,40px);color:var(--deep-rose);margin-bottom:10px}
 .bouquet-sub{font-size:17px;color:var(--warm);font-style:italic;margin-bottom:36px}
 .bouquet-wrap{max-width:420px;margin:0 auto;position:relative;cursor:pointer}
 .bouquet-wrap svg{width:100%;height:auto;filter:drop-shadow(0 20px 40px rgba(150,80,90,.25))}
-.flower-word{
-  position:absolute;
-  font-family:'Caveat',cursive;font-size:24px;color:var(--deep-rose);
-  opacity:0;transform:translateY(10px);
-  transition:all .6s cubic-bezier(.34,1.56,.64,1);
-  pointer-events:none;white-space:nowrap;
-  text-shadow:0 2px 8px rgba(255,255,255,.8);
-}
+.flower-word{position:absolute;font-family:'Caveat',cursive;font-size:24px;color:var(--deep-rose);opacity:0;transform:translateY(10px);transition:all .6s cubic-bezier(.34,1.56,.64,1);pointer-events:none;white-space:nowrap;text-shadow:0 2px 8px rgba(255,255,255,.8)}
 .flower-word.show{opacity:1;transform:translateY(0)}
-.bouquet-count{
-  font-family:'Caveat',cursive;font-size:22px;color:var(--deep-rose);
-  margin-top:24px;min-height:30px;
-}
+.bouquet-count{font-family:'Caveat',cursive;font-size:22px;color:var(--deep-rose);margin-top:24px;min-height:30px}
 .bouquet-continue{margin-top:36px;opacity:0;transition:opacity .8s ease;pointer-events:none}
 .bouquet-continue.show{opacity:1;pointer-events:auto}
-
-#forgive-screen{text-align:center;padding:60px 20px}
-.forgive-title{
-  font-family:'Playfair Display',serif;font-style:italic;
-  font-size:clamp(30px,6vw,44px);color:var(--deep-rose);margin-bottom:14px;
-}
-.forgive-sub{font-size:18px;color:var(--warm);font-style:italic;margin-bottom:40px}
-.forgive-box{
-  position:relative;width:100%;max-width:440px;height:260px;
-  margin:0 auto;border:1px solid rgba(200,130,140,.25);border-radius:20px;
-  background:rgba(253,248,240,.5);
-}
-.f-btn{
-  position:absolute;font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:19px;border-radius:50px;cursor:pointer;
-  transition:transform .25s, background .3s;
-  padding:14px 34px;white-space:nowrap;
-}
-#yesBtn{
-  background:var(--deep-rose);color:var(--cream);border:none;
-  left:16%;top:42%;z-index:5;
-  box-shadow:0 8px 22px rgba(199,125,120,.35);
-}
-#noBtn{
-  background:transparent;color:var(--deep-rose);border:1px solid var(--deep-rose);
-  right:12%;top:44%;z-index:4;
-  transition:left .18s ease, top .18s ease;
-}
-.forgive-hint{font-style:italic;color:var(--warm);font-size:15px;margin-top:20px;min-height:24px}
-
+#chance-screen{text-align:center;padding:60px 20px}
+.chance-title{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(30px,6vw,44px);color:var(--deep-rose);margin-bottom:14px}
+.chance-sub{font-size:18px;color:var(--warm);font-style:italic;margin-bottom:40px}
+.chance-box{position:relative;width:100%;max-width:440px;height:260px;margin:0 auto;border:1px solid rgba(200,130,140,.25);border-radius:20px;background:rgba(253,248,240,.5)}
+.c-btn{position:absolute;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;border-radius:50px;cursor:pointer;transition:transform .25s,background .3s;padding:14px 34px;white-space:nowrap}
+#yesBtn{background:var(--deep-rose);color:var(--cream);border:none;left:12%;top:42%;z-index:5;box-shadow:0 8px 22px rgba(199,125,120,.35)}
+#noBtn{background:transparent;color:var(--deep-rose);border:1px solid var(--deep-rose);right:10%;top:44%;z-index:4;transition:left .18s ease,top .18s ease}
+.chance-hint{font-style:italic;color:var(--warm);font-size:15px;margin-top:20px;min-height:24px}
 #thanks-screen{text-align:center;padding:60px 24px}
-#thanks-screen h1{
-  font-family:'Playfair Display',serif;font-style:italic;
-  font-size:clamp(42px,8vw,66px);color:var(--deep-rose);margin-bottom:22px;
-}
+#thanks-screen h1{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(42px,8vw,66px);color:var(--deep-rose);margin-bottom:22px}
 #thanks-screen p{font-size:clamp(19px,3vw,23px);max-width:560px;line-height:2;margin:0 auto 18px}
 .thanks-sig{font-family:'Caveat',cursive;font-size:30px;color:var(--deep-rose);margin-top:34px}
-
 .burst-flower{position:fixed;pointer-events:none;z-index:50;animation:burstFall linear forwards}
-@keyframes burstFall{
-  0%{transform:translateY(-40px) rotate(0);opacity:1}
-  100%{transform:translateY(105vh) rotate(380deg);opacity:.5}
-}
-
-.date-stamp{
-  position:fixed;bottom:20px;right:20px;
-  font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:14px;color:rgba(139,111,106,.5);z-index:2;
-}
-
+@keyframes burstFall{0%{transform:translateY(-40px) rotate(0);opacity:1}100%{transform:translateY(105vh) rotate(380deg);opacity:.5}}
+.date-stamp{position:fixed;bottom:20px;right:20px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:rgba(139,111,106,.5);z-index:2}
 @media(max-width:520px){
-  .forgive-box{height:230px}
-  .f-btn{font-size:17px;padding:12px 24px}
+  .chance-box{height:230px}
+  .c-btn{font-size:17px;padding:12px 24px}
   .flower-word{font-size:20px}
 }
 </style>
@@ -197,38 +93,22 @@ body{
     <ellipse cx="100" cy="155" rx="10" ry="4" fill="#7a9a6a" transform="rotate(-35 100 155)"/>
     <ellipse cx="138" cy="150" rx="10" ry="4" fill="#7a9a6a" transform="rotate(30 138 150)"/>
     <g transform="translate(120,120)">
-      <circle r="22" fill="#e8a5a0"/>
-      <circle r="17" fill="#f0b5b0"/>
-      <circle r="12" fill="#f5c5c0"/>
-      <circle r="7" fill="#f8d5d0"/>
-      <circle r="3" fill="#fce5e0"/>
+      <circle r="22" fill="#e8a5a0"/><circle r="17" fill="#f0b5b0"/><circle r="12" fill="#f5c5c0"/><circle r="7" fill="#f8d5d0"/><circle r="3" fill="#fce5e0"/>
       <path d="M-18,-8 Q-10,-20 0,-18 Q10,-20 18,-8" fill="none" stroke="#d4908a" stroke-width="1" opacity=".6"/>
       <path d="M-14,5 Q-5,-8 0,-5 Q5,-8 14,5" fill="none" stroke="#d4908a" stroke-width="1" opacity=".5"/>
     </g>
     <g transform="translate(95,110) scale(.8)">
-      <circle r="20" fill="#f2cdc9"/>
-      <circle r="15" fill="#f7dbd8"/>
-      <circle r="10" fill="#fbe8e5"/>
-      <circle r="5" fill="#fdf2f0"/>
+      <circle r="20" fill="#f2cdc9"/><circle r="15" fill="#f7dbd8"/><circle r="10" fill="#fbe8e5"/><circle r="5" fill="#fdf2f0"/>
       <path d="M-15,-6 Q-8,-16 0,-14 Q8,-16 15,-6" fill="none" stroke="#e0a5a0" stroke-width="1" opacity=".5"/>
     </g>
     <g transform="translate(145,112) scale(.85)">
-      <circle r="20" fill="#eeb5b0"/>
-      <circle r="15" fill="#f3c5c0"/>
-      <circle r="10" fill="#f8d5d0"/>
-      <circle r="5" fill="#fce5e0"/>
+      <circle r="20" fill="#eeb5b0"/><circle r="15" fill="#f3c5c0"/><circle r="10" fill="#f8d5d0"/><circle r="5" fill="#fce5e0"/>
       <path d="M-15,-6 Q-8,-16 0,-14 Q8,-16 15,-6" fill="none" stroke="#d4908a" stroke-width="1" opacity=".5"/>
     </g>
-    <circle cx="80" cy="125" r="8" fill="#f5d0cc"/>
-    <circle cx="160" cy="128" r="7" fill="#f0c5c0"/>
-    <circle cx="105" cy="95" r="6" fill="#f8ddd8"/>
-    <circle cx="135" cy="98" r="6" fill="#f5d5d0"/>
-    <circle cx="85" cy="105" r="3" fill="#fff" opacity=".8"/>
-    <circle cx="155" cy="108" r="3" fill="#fff" opacity=".8"/>
-    <circle cx="110" cy="88" r="2.5" fill="#fff" opacity=".7"/>
-    <circle cx="130" cy="90" r="2.5" fill="#fff" opacity=".7"/>
-    <circle cx="95" cy="135" r="2" fill="#fff" opacity=".6"/>
-    <circle cx="148" cy="138" r="2" fill="#fff" opacity=".6"/>
+    <circle cx="80" cy="125" r="8" fill="#f5d0cc"/><circle cx="160" cy="128" r="7" fill="#f0c5c0"/>
+    <circle cx="105" cy="95" r="6" fill="#f8ddd8"/><circle cx="135" cy="98" r="6" fill="#f5d5d0"/>
+    <circle cx="85" cy="105" r="3" fill="#fff" opacity=".8"/><circle cx="155" cy="108" r="3" fill="#fff" opacity=".8"/>
+    <circle cx="110" cy="88" r="2.5" fill="#fff" opacity=".7"/><circle cx="130" cy="90" r="2.5" fill="#fff" opacity=".7"/>
     <path d="M95 195 L120 230 L145 195" fill="none" stroke="#d4c4b0" stroke-width="2" opacity=".6"/>
     <path d="M100 200 L120 225 L140 200" fill="rgba(245,235,225,.4)" stroke="#d4c4b0" stroke-width="1"/>
   </svg>
@@ -269,8 +149,7 @@ body{
       <ellipse cx="180" cy="245" rx="15" ry="6" fill="#7a9a6a" transform="rotate(-30 180 245)"/>
       <ellipse cx="222" cy="240" rx="15" ry="6" fill="#7a9a6a" transform="rotate(28 222 240)"/>
       <g class="flower-click" data-word="0" transform="translate(200,170)">
-        <circle r="38" fill="#e8a5a0"/><circle r="32" fill="#eeb0ab"/><circle r="26" fill="#f2b8b3"/>
-        <circle r="20" fill="#f5c2bd"/><circle r="14" fill="#f8ccc7"/><circle r="8" fill="#fad6d1"/><circle r="4" fill="#fce0db"/>
+        <circle r="38" fill="#e8a5a0"/><circle r="32" fill="#eeb0ab"/><circle r="26" fill="#f2b8b3"/><circle r="20" fill="#f5c2bd"/><circle r="14" fill="#f8ccc7"/><circle r="8" fill="#fad6d1"/><circle r="4" fill="#fce0db"/>
         <path d="M-30,-14 Q-18,-32 0,-28 Q18,-32 30,-14" fill="none" stroke="#d08a84" stroke-width="1.5" opacity=".5"/>
         <path d="M-24,8 Q-10,-12 0,-8 Q10,-12 24,8" fill="none" stroke="#d08a84" stroke-width="1.2" opacity=".4"/>
         <path d="M-18,18 Q-8,2 0,5 Q8,2 18,18" fill="none" stroke="#d08a84" stroke-width="1" opacity=".35"/>
@@ -281,8 +160,7 @@ body{
         <ellipse cx="18" cy="-22" rx="12" ry="16" fill="#e5a09a" opacity=".5" transform="rotate(30 18 -22)"/>
       </g>
       <g class="flower-click" data-word="1" transform="translate(155,165) scale(.82)">
-        <circle r="34" fill="#f2cdc9"/><circle r="28" fill="#f5d5d1"/><circle r="22" fill="#f8ddd9"/>
-        <circle r="16" fill="#fae5e1"/><circle r="10" fill="#fcede9"/><circle r="5" fill="#fef4f1"/>
+        <circle r="34" fill="#f2cdc9"/><circle r="28" fill="#f5d5d1"/><circle r="22" fill="#f8ddd9"/><circle r="16" fill="#fae5e1"/><circle r="10" fill="#fcede9"/><circle r="5" fill="#fef4f1"/>
         <path d="M-26,-12 Q-15,-28 0,-24 Q15,-28 26,-12" fill="none" stroke="#dab0ab" stroke-width="1.2" opacity=".5"/>
         <path d="M-20,6 Q-8,-10 0,-6 Q8,-10 20,6" fill="none" stroke="#dab0ab" stroke-width="1" opacity=".4"/>
         <ellipse cx="-24" cy="10" rx="12" ry="17" fill="#eebfb9" opacity=".6" transform="rotate(-22 -24 10)"/>
@@ -290,8 +168,7 @@ body{
         <ellipse cx="0" cy="-24" rx="14" ry="12" fill="#f0c5c0" opacity=".5"/>
       </g>
       <g class="flower-click" data-word="2" transform="translate(245,168) scale(.85)">
-        <circle r="34" fill="#e5a5a0"/><circle r="28" fill="#eab0ab"/><circle r="22" fill="#eeb8b3"/>
-        <circle r="16" fill="#f2c2bd"/><circle r="10" fill="#f5ccc7"/><circle r="5" fill="#f8d6d1"/>
+        <circle r="34" fill="#e5a5a0"/><circle r="28" fill="#eab0ab"/><circle r="22" fill="#eeb8b3"/><circle r="16" fill="#f2c2bd"/><circle r="10" fill="#f5ccc7"/><circle r="5" fill="#f8d6d1"/>
         <path d="M-26,-12 Q-15,-28 0,-24 Q15,-28 26,-12" fill="none" stroke="#d0908a" stroke-width="1.2" opacity=".5"/>
         <path d="M-20,6 Q-8,-10 0,-6 Q8,-10 20,6" fill="none" stroke="#d0908a" stroke-width="1" opacity=".4"/>
         <ellipse cx="-24" cy="10" rx="12" ry="17" fill="#e09a94" opacity=".6" transform="rotate(-22 -24 10)"/>
@@ -299,26 +176,20 @@ body{
         <ellipse cx="0" cy="-24" rx="14" ry="12" fill="#e5a5a0" opacity=".5"/>
       </g>
       <g class="flower-click" data-word="3" transform="translate(130,195) scale(.6)">
-        <circle r="30" fill="#f5d5d0"/><circle r="24" fill="#f8ddd8"/><circle r="18" fill="#fae5e0"/>
-        <circle r="12" fill="#fceae6"/><circle r="6" fill="#fef2ef"/>
+        <circle r="30" fill="#f5d5d0"/><circle r="24" fill="#f8ddd8"/><circle r="18" fill="#fae5e0"/><circle r="12" fill="#fceae6"/><circle r="6" fill="#fef2ef"/>
         <ellipse cx="-20" cy="8" rx="10" ry="14" fill="#f0c5c0" opacity=".6" transform="rotate(-25 -20 8)"/>
         <ellipse cx="20" cy="8" rx="10" ry="14" fill="#f0c5c0" opacity=".6" transform="rotate(25 20 8)"/>
       </g>
       <g class="flower-click" data-word="4" transform="translate(270,198) scale(.62)">
-        <circle r="30" fill="#eeb0ab"/><circle r="24" fill="#f2b8b3"/><circle r="18" fill="#f5c2bd"/>
-        <circle r="12" fill="#f8ccc7"/><circle r="6" fill="#fad6d1"/>
+        <circle r="30" fill="#eeb0ab"/><circle r="24" fill="#f2b8b3"/><circle r="18" fill="#f5c2bd"/><circle r="12" fill="#f8ccc7"/><circle r="6" fill="#fad6d1"/>
         <ellipse cx="-20" cy="8" rx="10" ry="14" fill="#e8a5a0" opacity=".6" transform="rotate(-25 -20 8)"/>
         <ellipse cx="20" cy="8" rx="10" ry="14" fill="#e8a5a0" opacity=".6" transform="rotate(25 20 8)"/>
       </g>
-      <circle cx="140" cy="150" r="4" fill="#fff" opacity=".85"/>
-      <circle cx="260" cy="155" r="4" fill="#fff" opacity=".85"/>
-      <circle cx="175" cy="135" r="3" fill="#fff" opacity=".7"/>
-      <circle cx="225" cy="138" r="3" fill="#fff" opacity=".7"/>
-      <circle cx="155" cy="210" r="3" fill="#fff" opacity=".6"/>
-      <circle cx="248" cy="212" r="3" fill="#fff" opacity=".6"/>
+      <circle cx="140" cy="150" r="4" fill="#fff" opacity=".85"/><circle cx="260" cy="155" r="4" fill="#fff" opacity=".85"/>
+      <circle cx="175" cy="135" r="3" fill="#fff" opacity=".7"/><circle cx="225" cy="138" r="3" fill="#fff" opacity=".7"/>
+      <circle cx="155" cy="210" r="3" fill="#fff" opacity=".6"/><circle cx="248" cy="212" r="3" fill="#fff" opacity=".6"/>
       <circle cx="200" cy="130" r="3.5" fill="#fff" opacity=".75"/>
-      <circle cx="120" cy="175" r="2.5" fill="#fff" opacity=".6"/>
-      <circle cx="280" cy="178" r="2.5" fill="#fff" opacity=".6"/>
+      <circle cx="120" cy="175" r="2.5" fill="#fff" opacity=".6"/><circle cx="280" cy="178" r="2.5" fill="#fff" opacity=".6"/>
       <ellipse cx="145" cy="145" rx="6" ry="3" fill="#8aaa7a" opacity=".7" transform="rotate(-20 145 145)"/>
       <ellipse cx="255" cy="148" rx="6" ry="3" fill="#8aaa7a" opacity=".7" transform="rotate(15 255 148)"/>
       <path d="M150 360 L200 410 L250 360" fill="rgba(245,235,225,.5)" stroke="#c9b8a5" stroke-width="2"/>
@@ -334,25 +205,25 @@ body{
   </div>
   <div class="bouquet-count" id="bouquetCount"></div>
   <div class="bouquet-continue" id="bouquetContinue">
-    <button class="continue-btn" onclick="showScreen('forgive-screen')">one last thing 🌸</button>
+    <button class="continue-btn" onclick="showScreen('chance-screen')">one last thing 🌸</button>
   </div>
 </div>
 
-<!-- ═══ FORGIVE ═══ -->
-<div class="screen" id="forgive-screen">
-  <h2 class="forgive-title">So... will you forgive me?</h2>
-  <p class="forgive-sub">take your time. I'll wait.</p>
-  <div class="forgive-box" id="forgiveBox">
-    <button class="f-btn" id="yesBtn">Yes, I forgive you 🌸</button>
-    <button class="f-btn" id="noBtn">No</button>
+<!-- ═══ ANOTHER CHANCE ═══ -->
+<div class="screen" id="chance-screen">
+  <h2 class="chance-title">So... will you give me another chance?</h2>
+  <p class="chance-sub">take your time. I'll wait.</p>
+  <div class="chance-box" id="chanceBox">
+    <button class="c-btn" id="yesBtn">Yes, another chance 🌸</button>
+    <button class="c-btn" id="noBtn">No</button>
   </div>
-  <div class="forgive-hint" id="forgiveHint"></div>
+  <div class="chance-hint" id="chanceHint"></div>
 </div>
 
 <!-- ═══ THANKS ═══ -->
 <div class="screen" id="thanks-screen">
   <h1>Thank you.</h1>
-  <p>I know sorry doesn't undo anything — but I promise you this: I'll be softer, I'll be more careful, and I'll spend every day proving your forgiveness wasn't wasted.</p>
+  <p>I know sorry doesn't undo anything — but I promise you this: I'll be softer, I'll be more careful, and I'll spend every day proving your trust wasn't wasted.</p>
   <p style="font-style:italic;color:var(--deep-rose)">You mean more to me than any silly argument ever will.</p>
   <div class="thanks-sig">— Osama 🌸</div>
 </div>
@@ -385,7 +256,7 @@ function showScreen(id){
   if(id==='bouquet-screen') initBouquet();
 }
 
-/* ═══ Typewriter (حرف حرف - طبيعي) ═══ */
+/* ═══ Typewriter (حرف حرف) ═══ */
 const letterText = [
   {text:"Not the kind of sorry where I make excuses.", em:false},
   {text:"Not the kind where I say", em:false},
@@ -429,10 +300,7 @@ function startTypewriter(){
   cursor.className = 'letter-cursor';
   body.appendChild(cursor);
   
-  let lineIdx = 0;
-  let charIdx = 0;
-  let currentP = null;
-  let currentSpan = null;
+  let lineIdx = 0, charIdx = 0, currentP = null, currentSpan = null;
   
   function typeNextChar(){
     if(lineIdx >= letterText.length){
@@ -445,87 +313,62 @@ function startTypewriter(){
       }, 500);
       return;
     }
-    
     const line = letterText[lineIdx];
-    
     if(line.text === ""){
-      currentP = null;
-      currentSpan = null;
-      lineIdx++;
-      charIdx = 0;
+      currentP = null; currentSpan = null;
+      lineIdx++; charIdx = 0;
       setTimeout(typeNextChar, 500);
       return;
     }
-    
     if(charIdx === 0){
       currentP = document.createElement('p');
       currentP.style.marginBottom = '18px';
       body.insertBefore(currentP, cursor);
-      
       currentSpan = document.createElement('span');
       if(line.em) currentSpan.style.color = 'var(--deep-rose)';
       currentP.appendChild(currentSpan);
     }
-    
     if(charIdx < line.text.length){
       const char = line.text[charIdx];
       currentSpan.textContent += char;
       charIdx++;
-      
       let delay = 45;
       if(char === '.') delay = 350;
       else if(char === ',') delay = 200;
       else if(char === '"' || char === '"') delay = 150;
-      
       setTimeout(typeNextChar, delay);
     } else {
-      lineIdx++;
-      charIdx = 0;
+      lineIdx++; charIdx = 0;
       setTimeout(typeNextChar, 120);
     }
   }
-  
   setTimeout(typeNextChar, 800);
 }
 
-/* ═══ Bouquet interaction ═══ */
+/* ═══ Bouquet ═══ */
 const flowerWords = ["I'm sorry","I didn't mean it","I'll be softer","you matter to me","always 🌸"];
-let openedFlowers = 0;
-let bouquetInit = false;
+let openedFlowers = 0, bouquetInit = false;
 
 function initBouquet(){
   if(bouquetInit) return;
   bouquetInit = true;
-  
   const flowers = document.querySelectorAll('.flower-click');
   flowers.forEach(flower=>{
     flower.style.cursor = 'pointer';
-    flower.style.transition = 'transform .4s ease';
-    
     flower.addEventListener('click', ()=>{
       if(flower.dataset.opened) return;
       flower.dataset.opened = 'true';
-      
       const idx = parseInt(flower.dataset.word);
-      const wordEl = document.getElementById('fw'+idx);
-      wordEl.classList.add('show');
-      
-      const currentTransform = flower.getAttribute('transform') || '';
-      flower.style.animation = 'none';
-      flower.offsetHeight;
-      flower.style.transition = 'transform .5s cubic-bezier(.34,1.56,.64,1)';
-      
-      const g = flower;
-      g.style.transformOrigin = 'center';
-      g.animate([
-        {transform: currentTransform + ' scale(1)'},
-        {transform: currentTransform + ' scale(1.15)'},
-        {transform: currentTransform + ' scale(1)'}
+      document.getElementById('fw'+idx).classList.add('show');
+      const ct = flower.getAttribute('transform') || '';
+      flower.style.transformOrigin = 'center';
+      flower.animate([
+        {transform: ct + ' scale(1)'},
+        {transform: ct + ' scale(1.15)'},
+        {transform: ct + ' scale(1)'}
       ], {duration: 600, easing: 'ease-out'});
-      
       playPop();
       openedFlowers++;
-      
       const count = document.getElementById('bouquetCount');
       if(openedFlowers === flowerWords.length){
         count.textContent = "every word is true 💗";
@@ -540,10 +383,10 @@ function initBouquet(){
   });
 }
 
-/* ═══ Forgive buttons ═══ */
+/* ═══ Another Chance buttons ═══ */
 const yesBtn = document.getElementById('yesBtn');
 const noBtn = document.getElementById('noBtn');
-const hint = document.getElementById('forgiveHint');
+const hint = document.getElementById('chanceHint');
 const hints = [
   "hmm, are you sure?",
   "really? 🥺",
@@ -551,13 +394,12 @@ const hints = [
   "please? 🌸",
   "okay this button is getting impossible..."
 ];
-let noTries = 0;
-let yesScale = 1;
+let noTries = 0, yesScale = 1;
 
 function moveNo(){
   if(noTries >= 5) return;
   noTries++;
-  const box = document.getElementById('forgiveBox');
+  const box = document.getElementById('chanceBox');
   const maxX = box.offsetWidth - noBtn.offsetWidth - 14;
   const maxY = box.offsetHeight - noBtn.offsetHeight - 14;
   noBtn.style.left = (7 + Math.random()*(maxX-7)) + 'px';
@@ -571,17 +413,17 @@ function moveNo(){
     noBtn.style.background = "var(--deep-rose)";
     noBtn.style.color = "var(--cream)";
     noBtn.style.borderColor = "var(--deep-rose)";
-    noBtn.onclick = forgive;
+    noBtn.onclick = accept;
     hint.textContent = "knew you'd come around 💗";
   }
 }
 
 noBtn.addEventListener('mouseenter', ()=>{ if(noTries<5) moveNo(); });
-noBtn.addEventListener('click', e=>{ e.preventDefault(); if(noTries<5) moveNo(); else forgive(); });
+noBtn.addEventListener('click', e=>{ e.preventDefault(); if(noTries<5) moveNo(); else accept(); });
 noBtn.addEventListener('touchstart', e=>{ if(noTries<5){ e.preventDefault(); moveNo(); } }, {passive:false});
-yesBtn.addEventListener('click', forgive);
+yesBtn.addEventListener('click', accept);
 
-function forgive(){
+function accept(){
   flowerRain(50);
   setTimeout(()=>showScreen('thanks-screen'), 600);
 }
